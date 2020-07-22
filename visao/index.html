@@ -1,3 +1,18 @@
+<?php
+    include('../modelo/conexao.php');
+
+    session_start();
+if((!isset ($_SESSION['nome']) == true) and (!isset ($_SESSION['senha']) == true))
+{
+  unset($_SESSION['nome']);
+  unset($_SESSION['senha']);
+  header('location:index.php');
+  }
+ 
+$logado = $_SESSION['nome'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,7 +31,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-menu-index">
-        <a href="index.html" class="navbar-brand text-primary img"><img src="imagens/Big.png" width="80px" height="80px" class="img-fluid"></a>
+        <a href="index.php" class="navbar-brand text-primary img"><img src="imagens/Big.png" width="80px" height="80px" class="img-fluid"></a>
         <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
